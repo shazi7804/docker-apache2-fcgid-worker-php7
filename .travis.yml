@@ -1,0 +1,28 @@
+services:
+  - docker
+env:
+  global:
+    - REPO: shazi7804/docker-apache2-fcgid-worker-php7
+  matrix:
+  - PHP_VERSION=7.0
+  - PHP_VERSION=7.1
+  - PHP_VERSION=7.2
+install:
+  - git clone https://github.com/docker-library/official-images.git ~/official-images
+before_script:
+  - env | sort
+  - cd "$PHP_VERSION"
+  - image="${REPO}:${PHP_VERSION}"
+script:
+  - travis_retry docker build -t "$image"
+  - docker run -itd $image
+
+after_success:
+  - docker images
+  - 'if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u $DOCKER_USER -p $DOCKER_PASS;
+      docker push ${REPO};
+    fi'
+
+notifications:
+  email: false
