@@ -14,7 +14,7 @@ before_script:
   - cd "$PHP_VERSION"
   - image="${REPO}:${PHP_VERSION}"
 script:
-  - travis_retry docker build -t "$image"
+  - travis_retry docker build -t "$image" .
   - docker run -itd $image
 
 after_success:
