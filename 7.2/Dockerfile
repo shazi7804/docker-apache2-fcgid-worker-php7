@@ -30,7 +30,7 @@ RUN set -ex \
          php${PHP_VERSION}-fpm \
          php${PHP_VERSION}-mysql \
          php${PHP_VERSION}-mongodb \
-         php${PHP_VERSION}-mcrypt \
+         #php${PHP_VERSION}-mcrypt \
          php${PHP_VERSION}-gd \
          php${PHP_VERSION}-json \
          php${PHP_VERSION}-bcmath \
