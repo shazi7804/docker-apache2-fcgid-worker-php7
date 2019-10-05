@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER shazi7804 <shazi7804@gmail.com>
 
-ENV PHP_VERSION 7.2
+ENV PHP_VERSION 7.3
 
 # Add non-free and packages
 RUN echo 'deb http://archive.ubuntu.com/ubuntu/ xenial multiverse \n\
@@ -30,7 +30,6 @@ RUN set -ex \
          php${PHP_VERSION}-fpm \
          php${PHP_VERSION}-mysql \
          php${PHP_VERSION}-mongodb \
-         #php${PHP_VERSION}-mcrypt \
          php${PHP_VERSION}-gd \
          php${PHP_VERSION}-json \
          php${PHP_VERSION}-bcmath \

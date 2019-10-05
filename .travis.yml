@@ -7,7 +7,8 @@ env:
   - PHP_VERSION=7.0 TAG=7.0
   - PHP_VERSION=7.1 TAG=7.1
   - PHP_VERSION=7.2 TAG=7.2
-  - PHP_VERSION=7.1 TAG=latest
+  - PHP_VERSION=7.3 TAG=7.3
+  - PHP_VERSION=7.3 TAG=latest
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
 before_script:
