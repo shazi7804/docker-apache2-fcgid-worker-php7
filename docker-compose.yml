@@ -16,4 +16,4 @@ services:
 networks:
   LAN:
     driver: bridge
-    name: web_LAN
+    name: ${APP_NAME}_LAN
