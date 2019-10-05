@@ -44,6 +44,11 @@ RUN set -ex \
          php${PHP_VERSION}-opcache \
          php${PHP_VERSION}-readline
 
+# install php composer
+RUN set -ex \
+      && curl -s https://getcomposer.org/installer | php \
+      && mv composer.phar /usr/local/bin/composer
+
 # set apache module
 RUN set -ex \
       && a2dismod mpm_event \
