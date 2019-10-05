@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  app:
+    container_name: ${APP_NAME}
+    hostname: ${APP_NAME}
+    networks:
+    - LAN
+    build: 
+      context: ./${PHP_VERSION}
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:80
+    volumes:
+      - ./${PHP_VERSION}:/var/www/html/
+
+networks:
+  LAN:
+    driver: bridge
+    name: web_LAN

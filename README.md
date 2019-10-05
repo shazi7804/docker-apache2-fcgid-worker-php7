@@ -11,8 +11,27 @@
 # Tags/Versions
   - 7.0
   - 7.1 
-  - 7.2, latest
+  - 7.2
+  - 7.3, latest
 
 # How to get images
 
     $ docker pull shazi7804/apache2-fcgid-worker-php7
+
+# Run on docker compose
+1. Setting your env value
+    ```bash
+    $ cp .env.example
+    ```
+2. run
+    ```bash
+    $ docker-compose up
+    ```
+3. enjoy!
+
+# Environment document
+| Key         | Help                   | Default |
+| ----------- | ---------------------- | ------- |
+| APP_NAME    | docker container name  | php73   |
+| APP_PORT    | docker port            | 8080    |
+| PHP_VERSION | php version            | 7.3     |
