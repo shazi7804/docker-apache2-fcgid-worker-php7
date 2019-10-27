@@ -41,7 +41,9 @@ RUN set -ex \
          php${PHP_VERSION}-sqlite3 \
          php${PHP_VERSION}-curl \
          php${PHP_VERSION}-opcache \
-         php${PHP_VERSION}-readline
+         php${PHP_VERSION}-readline \
+      &&  apt-get clean \
+      &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # install php composer
 RUN set -ex \
